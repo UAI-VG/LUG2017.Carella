@@ -4,7 +4,8 @@ using System.Collections.Generic;
 
 public class Game
 {
-    private List<Play> Plays;
+    private Stack<Play> Plays;
+    private Stack<Play> UnplayedPlays;
     private Board board;
     private Player[] players;
     private int turn = 0;
@@ -12,6 +13,7 @@ public class Game
     {
         this.board = board;
         this.players = players;
+        Plays = new  Stack<Play>();
     }
 
     public Board Board { get { return board; } }
@@ -28,7 +30,7 @@ public class Game
     {
         try
         {
-            Plays.Add(new Play(players[turn],players[(players.Length)-turn],column));
+            Plays.Push(new Play(players[turn],players[(players.Length-1)-turn],column,board));
             CurrentPlayer.Play(column, board);
             NextTurn();
         }
@@ -36,6 +38,11 @@ public class Game
         {
             // Do nothing
         }
+    }
+
+    public void UnPlay()
+    {
+        Plays.Pop().UnDo();
     }
 
     private void NextTurn()

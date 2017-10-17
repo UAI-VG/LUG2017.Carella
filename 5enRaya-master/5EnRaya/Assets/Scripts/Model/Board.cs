@@ -32,7 +32,19 @@ public class Board
         }
         throw new InvalidOperationException("Column is full!");
     }
-
+    public void Remove(int column)
+    {
+        for (int row = (height-1); row >= 0; row--)
+        {
+            int index = IndexOf(column, row);
+            if (tokens[index] != null)
+            {
+                tokens[index] = null;
+                return;
+            }
+        }
+        throw new InvalidOperationException("Column is full!");
+    }
     public Token Get(int index)
     {
         return tokens[index];

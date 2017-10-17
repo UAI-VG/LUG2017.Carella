@@ -7,6 +7,7 @@ public class GameScene : MonoBehaviour
 {
     public GameObject gridButtonsPanel;
     public GameObject gridPanel;
+    public GameObject CommandPatternButtons;
     public Text turnText;
 
     public Color[] playerColors;
@@ -20,6 +21,7 @@ public class GameScene : MonoBehaviour
     {
         InitializeGame();
         InitializeButtons();
+        InitializeCommandPatternButtons();
     }
 
     private void InitializeGame()
@@ -42,6 +44,25 @@ public class GameScene : MonoBehaviour
 
             int column = i; // INFO(Richo): Variable is captured by closure below
             button.onClick.AddListener(() => game.Play(column));
+        }
+    }
+
+    private void InitializeCommandPatternButtons()
+    {
+        for (int i = 0; i < CommandPatternButtons.transform.childCount; i++)
+        {
+            Transform child = CommandPatternButtons.transform.GetChild(i);
+            Button button = child.gameObject.GetComponent<Button>();
+
+           
+            if (i==0)
+            {
+                button.onClick.AddListener(() => game.UnPlay());
+            }
+            else if (i==1)
+            {
+
+            }
         }
     }
 
