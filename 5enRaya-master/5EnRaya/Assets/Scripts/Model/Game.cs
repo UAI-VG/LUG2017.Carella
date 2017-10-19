@@ -14,6 +14,7 @@ public class Game
         this.board = board;
         this.players = players;
         Plays = new  Stack<Play>();
+        UnplayedPlays = new Stack<Play>();
     }
 
     public Board Board { get { return board; } }
@@ -42,11 +43,17 @@ public class Game
 
     public void UnPlay()
     {
-        Plays.Pop().UnDo();
+        Plays.Peek().UnDo();
+       UnplayedPlays.Push(Plays.Pop());
+        PreviousTurn(); 
     }
 
     private void NextTurn()
     {
         turn = (turn + 1) % players.Length;
+    }
+    private void PreviousTurn()
+    {
+        turn = ((turn - 1) + players.Length) % players.Length;
     }
 }
