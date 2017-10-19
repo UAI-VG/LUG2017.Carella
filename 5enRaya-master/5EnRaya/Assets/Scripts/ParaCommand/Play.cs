@@ -22,7 +22,7 @@ public class Play  {
     public void Do ()
     {
 
-        
+        Doer.Play(col(), Board);
 
 }
     public void UnDo()

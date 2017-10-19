@@ -34,6 +34,7 @@ public class Game
             Plays.Push(new Play(players[turn],players[(players.Length-1)-turn],column,board));
             CurrentPlayer.Play(column, board);
             NextTurn();
+            UnplayedPlays.Clear();
         }
         catch (InvalidOperationException)
         {
@@ -43,9 +44,32 @@ public class Game
 
     public void UnPlay()
     {
-        Plays.Peek().UnDo();
-       UnplayedPlays.Push(Plays.Pop());
-        PreviousTurn(); 
+        try
+        {
+            Plays.Peek().UnDo();
+            UnplayedPlays.Push(Plays.Pop());
+            PreviousTurn();
+        }
+        catch (InvalidOperationException)
+        {
+            // Do nothing
+        }
+
+
+    }
+    public void RePlay()
+    {
+        try
+        {
+        UnplayedPlays.Peek().Do();
+        Plays.Push(UnplayedPlays.Pop());
+        NextTurn();
+        }
+        catch (InvalidOperationException)
+        {
+            // Do nothing
+        }
+
     }
 
     private void NextTurn()

@@ -61,7 +61,7 @@ public class GameScene : MonoBehaviour
             }
             else if (i==1)
             {
-
+                button.onClick.AddListener(() => game.RePlay());
             }
         }
     }
