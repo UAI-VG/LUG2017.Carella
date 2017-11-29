@@ -16,7 +16,7 @@ namespace Chess
         public static string LineaBlanca;
         public static string LineaNegra;
         public static int NextToComma=0;
-    
+        public static List<Piece> PiezasAmenazadas=new List<Piece>();
 
         static void Main(string[] args)
 

@@ -52,7 +52,8 @@ namespace Chess
                         if (!Board.IsInvalid(dest) &&( !Board.IsOccupied(dest)||
                         !Program.board.pieces[col, row].IsWhite))
                         {
-                            moves.Add(dest);
+                        Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
+                        moves.Add(dest);
                         }
                     }
 
@@ -67,6 +68,7 @@ namespace Chess
                     if (!Board.IsInvalid(dest) && (!Board.IsOccupied(dest) ||
                          !Program.board.pieces[col, row].IsWhite))
                     {
+                        Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
                         moves.Add(dest);
                     }
                 }
@@ -82,6 +84,7 @@ namespace Chess
                     if (!Board.IsInvalid(dest) && (!Board.IsOccupied(dest) ||
                           !Program.board.pieces[col, row].IsWhite))
                     {
+                        Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
                         moves.Add(dest);
                     }
                 }
@@ -97,6 +100,7 @@ namespace Chess
                     if (!Board.IsInvalid(dest) && (!Board.IsOccupied(dest) ||
                          !Program.board.pieces[col, row].IsWhite))
                     {
+                        Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
                         moves.Add(dest);
                     }
 
@@ -112,6 +116,7 @@ namespace Chess
                     if (!Board.IsInvalid(dest) && (!Board.IsOccupied(dest) ||
                          !Program.board.pieces[col, row].IsWhite))
                     {
+                        Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
                         moves.Add(dest);
                     }
 
@@ -127,6 +132,7 @@ namespace Chess
                     if (!Board.IsInvalid(dest) && (!Board.IsOccupied(dest) ||
                         !Program.board.pieces[col, row].IsWhite))
                     {
+                        Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
                         moves.Add(dest);
                     }
 
@@ -142,6 +148,7 @@ namespace Chess
                     if (!Board.IsInvalid(dest) && (!Board.IsOccupied(dest) ||
                          !Program.board.pieces[col, row].IsWhite))
                     {
+                        Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
                         moves.Add(dest);
                     }
 
@@ -158,6 +165,7 @@ namespace Chess
                     if (!Board.IsInvalid(dest) && (!Board.IsOccupied(dest) ||
                         !Program.board.pieces[col, row].IsWhite))
                     {
+                        Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
                         moves.Add(dest);
                     }
 

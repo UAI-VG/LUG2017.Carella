@@ -33,7 +33,16 @@ namespace Chess
                         row += 1;
                         Square dest = new Square(col, row);
                         if (Board.IsInvalid(dest)) break;
-                        if (Board.IsOccupied(dest)) break;
+                        if (Board.IsOccupied(dest))
+                        {
+                            if (Program.board.pieces[col, row].IsWhite) break;
+                            else
+                            {
+                                Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
+                                moves.Add(dest);
+                                break;
+                            }
+                        }
                         moves.Add(dest);
                     }
                 }
@@ -53,6 +62,7 @@ namespace Chess
                             if (Program.board.pieces[col, row].IsWhite) break;
                             else
                             {
+                                Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
                                 moves.Add(dest);
                                 break;
                             }
@@ -76,6 +86,7 @@ namespace Chess
                             if (Program.board.pieces[col, row].IsWhite) break;
                             else
                             {
+                                Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
                                 moves.Add(dest);
                                 break;
                             }
@@ -99,6 +110,7 @@ namespace Chess
                             if (Program.board.pieces[col, row].IsWhite) break;
                             else
                             {
+                                Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
                                 moves.Add(dest);
                                 break;
                             }
@@ -121,6 +133,7 @@ namespace Chess
                             if (Program.board.pieces[col, row].IsWhite) break;
                             else
                             {
+                                Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
                                 moves.Add(dest);
                                 break;
                             }
@@ -143,6 +156,7 @@ namespace Chess
                             if (Program.board.pieces[col, row].IsWhite) break;
                             else
                             {
+                                Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
                                 moves.Add(dest);
                                 break;
                             }
@@ -165,6 +179,7 @@ namespace Chess
                             if (Program.board.pieces[col, row].IsWhite) break;
                             else
                             {
+                                Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
                                 moves.Add(dest);
                                 break;
                             }
@@ -187,6 +202,7 @@ namespace Chess
                             if (Program.board.pieces[col, row].IsWhite) break;
                             else
                             {
+                                Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
                                 moves.Add(dest);
                                 break;
                             }
