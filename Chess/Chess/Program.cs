@@ -18,6 +18,15 @@ namespace Chess
         public static int NextToComma=0;
         public static List<Piece> PiezasAmenazadas=new List<Piece>();
 
+        static string StringParaARchivoOut()
+        {
+            string paraRetornar="";
+            foreach (Piece P in PiezasAmenazadas)
+            {
+                paraRetornar += P.ToOut+",";
+            }
+            return paraRetornar;
+        }
         static void Main(string[] args)
 
         {
@@ -70,6 +79,11 @@ namespace Chess
 
                 Console.ReadLine();
              
+            }
+            using (StreamWriter writer = new StreamWriter(@"C:\Users\User\Desktop\Out.txt",false,
+              Encoding.UTF8))
+            {
+                writer.WriteLine(StringParaARchivoOut());
             }
         }
 

@@ -30,12 +30,20 @@ namespace Chess
                     col -= 2;
                     row+=1;
                     Square dest = new Square(col, row);
+                    if (!Board.IsInvalid(dest))
                     if (!Board.IsInvalid(dest) && (!Board.IsOccupied(dest) ||
                         !Program.board.pieces[col, row].IsWhite))
                     {
-                        if (!Program.board.pieces[col, row].IsWhite)
-                        Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
-                        moves.Add(dest);
+                            try
+                            {
+                                if (Program.board.pieces[col, row].IsWhite)
+                                    Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
+                            }
+                            catch
+                            {
+                                //
+                            }
+                            moves.Add(dest);
                     }
                     
                 }
@@ -47,12 +55,20 @@ namespace Chess
                     col -= 2;
                     row -= 1;
                     Square dest = new Square(col, row);
-                    if (!Board.IsInvalid(dest) && (!Board.IsOccupied(dest) ||
+                    if (!Board.IsInvalid(dest))
+                        if (!Board.IsInvalid(dest) && (!Board.IsOccupied(dest) ||
                          !Program.board.pieces[col, row].IsWhite))
                     {
-                        if (!Program.board.pieces[col, row].IsWhite)
-                            Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
-                        moves.Add(dest);
+                            try
+                            {
+                                if (Program.board.pieces[col, row].IsWhite)
+                                    Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
+                            }
+                            catch
+                            {
+                                //
+                            }
+                            moves.Add(dest);
                     }
                 }
 
@@ -63,12 +79,20 @@ namespace Chess
                     col -= 1;
                     row += 2;
                     Square dest = new Square(col, row);
-                    if (!Board.IsInvalid(dest) && (!Board.IsOccupied(dest) ||
+                    if (!Board.IsInvalid(dest))
+                        if (!Board.IsInvalid(dest) && (!Board.IsOccupied(dest) ||
                         !Program.board.pieces[col, row].IsWhite))
                     {
-                        if (!Program.board.pieces[col, row].IsWhite)
-                            Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
-                        moves.Add(dest);
+                            try
+                            {
+                                if (Program.board.pieces[col, row].IsWhite)
+                                    Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
+                            }
+                            catch
+                            {
+                                //
+                            }
+                            moves.Add(dest);
                     }
 
                 }
@@ -80,12 +104,20 @@ namespace Chess
                     col -= 1;
                     row -= 2;
                     Square dest = new Square(col, row);
-                    if (!Board.IsInvalid(dest) && (!Board.IsOccupied(dest) ||
+                    if (!Board.IsInvalid(dest))
+                        if (!Board.IsInvalid(dest) && (!Board.IsOccupied(dest) ||
                         !Program.board.pieces[col, row].IsWhite))
                     {
-                        if (!Program.board.pieces[col, row].IsWhite)
-                            Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
-                        moves.Add(dest);
+                            try
+                            {
+                                if (Program.board.pieces[col, row].IsWhite)
+                                    Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
+                            }
+                            catch
+                            {
+                                //
+                            }
+                            moves.Add(dest);
                     }
 
                 }
@@ -96,12 +128,20 @@ namespace Chess
                     col += 2;
                     row += 1;
                     Square dest = new Square(col, row);
-                    if (!Board.IsInvalid(dest) && (!Board.IsOccupied(dest) ||
+                    if (!Board.IsInvalid(dest))
+                        if (!Board.IsInvalid(dest) && (!Board.IsOccupied(dest) ||
                          !Program.board.pieces[col, row].IsWhite))
                     {
-                        if (!Program.board.pieces[col, row].IsWhite)
-                            Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
-                        moves.Add(dest);
+                            try
+                            {
+                                if (Program.board.pieces[col, row].IsWhite)
+                                    Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
+                            }
+                            catch
+                            {
+                                //
+                            }
+                            moves.Add(dest);
                     }
 
                 }
@@ -112,12 +152,20 @@ namespace Chess
                     col += 2;
                     row -= 1;
                     Square dest = new Square(col, row);
-                    if (!Board.IsInvalid(dest) && (!Board.IsOccupied(dest) ||
+                    if (!Board.IsInvalid(dest))
+                        if (!Board.IsInvalid(dest) && (!Board.IsOccupied(dest) ||
                          !Program.board.pieces[col, row].IsWhite))
                     {
-                        if (!Program.board.pieces[col, row].IsWhite)
-                            Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
-                        moves.Add(dest);
+                            try
+                            {
+                                if (Program.board.pieces[col, row].IsWhite)
+                                    Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
+                            }
+                            catch
+                            {
+                                //
+                            }
+                            moves.Add(dest);
                     }
 
                 }
@@ -128,12 +176,20 @@ namespace Chess
                     col += 1;
                     row += 2;
                     Square dest = new Square(col, row);
-                    if (!Board.IsInvalid(dest) && (!Board.IsOccupied(dest) ||
+                    if (!Board.IsInvalid(dest))
+                        if (!Board.IsInvalid(dest) && (!Board.IsOccupied(dest) ||
                          !Program.board.pieces[col, row].IsWhite))
                     {
-                        if (!Program.board.pieces[col, row].IsWhite)
-                            Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
-                        moves.Add(dest);
+                            try
+                            {
+                                if (Program.board.pieces[col, row].IsWhite)
+                                    Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
+                            }
+                            catch
+                            {
+                                //
+                            }
+                            moves.Add(dest);
                     }
 
                 }
@@ -144,12 +200,20 @@ namespace Chess
                     col += 1;
                     row -= 2;
                     Square dest = new Square(col, row);
-                    if (!Board.IsInvalid(dest) && (!Board.IsOccupied(dest) ||
+                    if (!Board.IsInvalid(dest))
+                        if (!Board.IsInvalid(dest) && (!Board.IsOccupied(dest) ||
                         !Program.board.pieces[col, row].IsWhite))
                     {
-                        if (!Program.board.pieces[col, row].IsWhite)
-                            Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
-                        moves.Add(dest);
+                            try
+                            {
+                                if (Program.board.pieces[col, row].IsWhite)
+                                    Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
+                            }
+                            catch
+                            {
+                                //
+                            }
+                            moves.Add(dest);
                     }
 
                 }
