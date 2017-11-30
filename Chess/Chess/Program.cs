@@ -17,6 +17,8 @@ namespace Chess
         public static string LineaNegra;
         public static int NextToComma=0;
         public static List<Piece> PiezasAmenazadas=new List<Piece>();
+        public static Stack<MoveParaCommand> Dones;
+        public static Stack<MoveParaCommand> Undones;
 
         static string StringParaARchivoOut(List<Piece> Lista)
         {
@@ -77,17 +79,47 @@ namespace Chess
                 bool ParaWhile = true;
                 while (ParaWhile)
                 {
+                int PieceNumber = 0;
                     foreach (Piece piece in board.Pieces)
                     {
-                        Console.WriteLine("La pieza {0} puede moverse a:", piece);
+                        Console.WriteLine("La pieza {1} {0} puede moverse a:", piece,PieceNumber);
+                    PieceNumber++;
+                    int MoveNumber = 0;
                         foreach (Square s in piece.Moves)
                         {
-                            Console.WriteLine(s);
+                            Console.WriteLine("Movimiento {1}: {0}",s,MoveNumber);
+                        MoveNumber++;
                         }
                         Console.WriteLine();
                     }
-
-                    Console.ReadLine();
+                Console.WriteLine("Que Pieza Moves? Pone el numero de columna (cagate en notacion algebraica)");
+                int numeroP = int.Parse(Console.ReadLine());
+                Console.WriteLine("Que Pieza Moves? Pone el numero de fila (cagate en notacion algebraica)");
+                int numeroPY = int.Parse(Console.ReadLine());
+                Console.WriteLine("A que columna? Cagate en notacion algebraica");
+                int numeroM = int.Parse(Console.ReadLine());
+                Console.WriteLine("A que fila? Cagate en notacion algebraica");
+                int numeroMY = int.Parse(Console.ReadLine());
+                MoveParaCommand Comandino = new MoveParaCommand();
+                Comandino.Icono = board.pieces[numeroP, numeroPY].ToOut[0];
+                Comandino.PosX = numeroP;
+                Comandino.PosY = numeroPY;
+                try
+                {
+                    Comandino.Iconocomido = board.pieces[numeroM, numeroMY].ToOut[0];
+                }
+                catch
+                {
+                    Comandino.Iconocomido = '0';
+                }
+              
+                Comandino.PosXC = numeroM;
+                Comandino.PosYC = numeroMY;
+                Dones.Push(Comandino);
+                
+                //------------------------------------------------------------------------
+             
+                Console.ReadLine();
                 
                 using (StreamWriter writer = new StreamWriter(@"C:\Users\User\Desktop\Out.txt", false,
                   Encoding.UTF8))
@@ -205,6 +237,7 @@ namespace Chess
                     case 'C': return new Knight();
                     case 'P': return new Pawn();
                     case 'K': return new King();
+                    case '0': return null;
                     default: throw new Exception();
                 }
             }
