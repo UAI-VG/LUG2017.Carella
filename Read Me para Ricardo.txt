@@ -1,0 +1,27 @@
+Sorry por la entrega mierdosa,
+toy echo bosta, a estas alturas
+calculo que no voy a clase hoy.
+los 5 en raya estan separados
+(el command y el winform), 
+ahora en este commit meto lo que
+tengo echo del magic, lo del ajedrez
+lo tengo todo en 1 solo proyecto.
+Queria separarte las consignas como
+pediste y terminar las cosas que no
+pude hacer durante la cursada hoy 
+pero toy echo mierda y
+la cabeza no me carga 2 indirecciones.
+Hasta donde se al tp 1 le faltan los
+puntos, el tp 2 esta completo,
+el tp 3 es un asco que le falta
+el movimiento y el command lo tiene
+incompleto. El 5 en raya de winforms
+grafica alrevez pero sacando eso
+funciona perfecto. El 5 en raya 
+de unity deberia estar bien.
+Queria hacer los UML alla pero
+no paro de vomitar, ahora veo si los
+puedo hacer. 
+Avisame si voy a recuperatorio o te
+llevo los tps al final o que.
+
