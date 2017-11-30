@@ -44,9 +44,9 @@ namespace Chess
                
                     LineaBlanca = reader.ReadLine();
                     LineaNegra = reader.ReadLine();
+            }
 
-               
-                Console.WriteLine(LineaBlanca);
+            Console.WriteLine(LineaBlanca);
                 Console.WriteLine(LineaNegra);
                 do
                 {
@@ -88,13 +88,41 @@ namespace Chess
                     }
 
                     Console.ReadLine();
-                }
+                
                 using (StreamWriter writer = new StreamWriter(@"C:\Users\User\Desktop\Out.txt", false,
                   Encoding.UTF8))
                 {
                     writer.WriteLine(StringParaARchivoOut(PiezasAmenazadas));
                 }
-            }
+                List<Piece> ListaDeBlancasParaExportar = new List<Piece>();
+                List<Piece> ListaDeNegrasParaExportar = new List<Piece>();
+                foreach (Piece P in board.pieces)
+                {
+                        try
+                        {
+                            if (P.IsWhite)
+                            {
+                                ListaDeBlancasParaExportar.Add(P);
+                            }
+                            else
+                            {
+                                ListaDeNegrasParaExportar.Add(P);
+                            }
+                        }
+                        catch
+                        {
+                            //
+                        }
+                   
+                }
+                using (StreamWriter Writer = new StreamWriter(@"C:\Users\User\Desktop\In.txt", false,
+                 Encoding.UTF8))
+                {
+                    Writer.WriteLine(StringParaARchivoOut(ListaDeBlancasParaExportar));
+                    Writer.WriteLine(StringParaARchivoOut(ListaDeNegrasParaExportar));
+                }
+                }
+            
                
         }
 

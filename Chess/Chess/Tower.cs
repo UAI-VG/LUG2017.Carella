@@ -13,7 +13,7 @@ namespace Chess
             get
             {
                 string n;
-                n = "D" + Position.ToString();
+                n = "T" + Position.ToString();
                 return n;
             }
         }
