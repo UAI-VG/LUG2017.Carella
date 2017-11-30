@@ -18,18 +18,25 @@ namespace Chess
         public static int NextToComma=0;
         public static List<Piece> PiezasAmenazadas=new List<Piece>();
 
-        static string StringParaARchivoOut()
+        static string StringParaARchivoOut(List<Piece> Lista)
         {
             string paraRetornar="";
-            foreach (Piece P in PiezasAmenazadas)
+            bool NotTheFirstOne=false;
+            foreach (Piece P in Lista)
             {
-                paraRetornar += P.ToOut+",";
+                if (NotTheFirstOne)
+                {
+                    paraRetornar+=",";
+                }
+                paraRetornar += P.ToOut;
+                NotTheFirstOne = true;
             }
             return paraRetornar;
         }
         static void Main(string[] args)
 
         {
+            //------------------------------------------------------------------------
             using (StreamReader reader = new StreamReader(@"C:\Users\User\Desktop\In.txt",
                 Encoding.UTF8))
             //so far so good
@@ -66,25 +73,29 @@ namespace Chess
                 {
                     PlacePieceOnBoard(GetBlackPiece(negras[i][0]), negras[i].Substring(1, 2));
                 }
-
-                foreach (Piece piece in board.Pieces)
+                //------------------------------------------------------------------------
+                bool ParaWhile = true;
+                while (ParaWhile)
                 {
-                    Console.WriteLine("La pieza {0} puede moverse a:", piece);
-                    foreach (Square s in piece.Moves)
+                    foreach (Piece piece in board.Pieces)
                     {
-                        Console.WriteLine(s);
+                        Console.WriteLine("La pieza {0} puede moverse a:", piece);
+                        foreach (Square s in piece.Moves)
+                        {
+                            Console.WriteLine(s);
+                        }
+                        Console.WriteLine();
                     }
-                    Console.WriteLine();
-                }
 
-                Console.ReadLine();
-             
+                    Console.ReadLine();
+                }
+                using (StreamWriter writer = new StreamWriter(@"C:\Users\User\Desktop\Out.txt", false,
+                  Encoding.UTF8))
+                {
+                    writer.WriteLine(StringParaARchivoOut(PiezasAmenazadas));
+                }
             }
-            using (StreamWriter writer = new StreamWriter(@"C:\Users\User\Desktop\Out.txt",false,
-              Encoding.UTF8))
-            {
-                writer.WriteLine(StringParaARchivoOut());
-            }
+               
         }
 
         //---------------------------------------------------------------------------------
