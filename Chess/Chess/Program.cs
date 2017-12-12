@@ -92,7 +92,8 @@ namespace Chess
                     }
                     Console.WriteLine();
                 }
-                IntentoViejoDeCommand();
+                RecibirInputParaMovimientos();
+                
 
                 //------------------------------------------------------------------------
 
@@ -134,7 +135,34 @@ namespace Chess
 
 
         }
+        private static void RecibirInputParaMovimientos()
+        {
+            Console.WriteLine("que pieza? (manda numero)");
+            int Input1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("que numero de movimiento (manda numero)");
+            int Input2 = int.Parse(Console.ReadLine());
+            int PieceNumber = 0;
+            foreach (Piece piece in board.Pieces)
+            {
+              if (PieceNumber==Input1)
+                {
+                    int MoveNumber = 0;
+                    foreach (Square s in piece.Moves)
+                    {
+                       if (MoveNumber==Input2)
+                        {
+                            Console.WriteLine(piece.Position.Row + " " + piece.Position.Column);
+                            Console.WriteLine(s.Row +" "+ s.Column);
+                        }
+                        MoveNumber++;
+                    }
+                    Console.WriteLine();
+                }
+                PieceNumber++;
+               
+            }
 
+        }
         private static void IntentoViejoDeCommand()
         {
             Console.WriteLine("Que Pieza Moves? Pone el numero de columna (cagate en notacion algebraica)");
