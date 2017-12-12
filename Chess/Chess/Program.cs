@@ -78,49 +78,26 @@ namespace Chess
                 //------------------------------------------------------------------------
                 bool ParaWhile = true;
                 while (ParaWhile)
-                {
+            {
                 int PieceNumber = 0;
-                    foreach (Piece piece in board.Pieces)
-                    {
-                        Console.WriteLine("La pieza {1} {0} puede moverse a:", piece,PieceNumber);
+                foreach (Piece piece in board.Pieces)
+                {
+                    Console.WriteLine("La pieza {1} {0} puede moverse a:", piece, PieceNumber);
                     PieceNumber++;
                     int MoveNumber = 0;
-                        foreach (Square s in piece.Moves)
-                        {
-                            Console.WriteLine("Movimiento {1}: {0}",s,MoveNumber);
+                    foreach (Square s in piece.Moves)
+                    {
+                        Console.WriteLine("Movimiento {1}: {0}", s, MoveNumber);
                         MoveNumber++;
-                        }
-                        Console.WriteLine();
                     }
-                Console.WriteLine("Que Pieza Moves? Pone el numero de columna (cagate en notacion algebraica)");
-                int numeroP = int.Parse(Console.ReadLine());
-                Console.WriteLine("Que Pieza Moves? Pone el numero de fila (cagate en notacion algebraica)");
-                int numeroPY = int.Parse(Console.ReadLine());
-                Console.WriteLine("A que columna? Cagate en notacion algebraica");
-                int numeroM = int.Parse(Console.ReadLine());
-                Console.WriteLine("A que fila? Cagate en notacion algebraica");
-                int numeroMY = int.Parse(Console.ReadLine());
-                MoveParaCommand Comandino = new MoveParaCommand();
-                Comandino.Icono = board.pieces[numeroP, numeroPY].ToOut[0];
-                Comandino.PosX = numeroP;
-                Comandino.PosY = numeroPY;
-                try
-                {
-                    Comandino.Iconocomido = board.pieces[numeroM, numeroMY].ToOut[0];
+                    Console.WriteLine();
                 }
-                catch
-                {
-                    Comandino.Iconocomido = '0';
-                }
-              
-                Comandino.PosXC = numeroM;
-                Comandino.PosYC = numeroMY;
-                Dones.Push(Comandino);
-                
+                IntentoViejoDeCommand();
+
                 //------------------------------------------------------------------------
-             
+
                 Console.ReadLine();
-                
+
                 using (StreamWriter writer = new StreamWriter(@"C:\Users\User\Desktop\Out.txt", false,
                   Encoding.UTF8))
                 {
@@ -130,22 +107,22 @@ namespace Chess
                 List<Piece> ListaDeNegrasParaExportar = new List<Piece>();
                 foreach (Piece P in board.pieces)
                 {
-                        try
+                    try
+                    {
+                        if (P.IsWhite)
                         {
-                            if (P.IsWhite)
-                            {
-                                ListaDeBlancasParaExportar.Add(P);
-                            }
-                            else
-                            {
-                                ListaDeNegrasParaExportar.Add(P);
-                            }
+                            ListaDeBlancasParaExportar.Add(P);
                         }
-                        catch
+                        else
                         {
-                            //
+                            ListaDeNegrasParaExportar.Add(P);
                         }
-                   
+                    }
+                    catch
+                    {
+                        //
+                    }
+
                 }
                 using (StreamWriter Writer = new StreamWriter(@"C:\Users\User\Desktop\In.txt", false,
                  Encoding.UTF8))
@@ -153,13 +130,41 @@ namespace Chess
                     Writer.WriteLine(StringParaARchivoOut(ListaDeBlancasParaExportar));
                     Writer.WriteLine(StringParaARchivoOut(ListaDeNegrasParaExportar));
                 }
-                }
-            
-               
+            }
+
+
+        }
+
+        private static void IntentoViejoDeCommand()
+        {
+            Console.WriteLine("Que Pieza Moves? Pone el numero de columna (cagate en notacion algebraica)");
+            int numeroP = int.Parse(Console.ReadLine());
+            Console.WriteLine("Que Pieza Moves? Pone el numero de fila (cagate en notacion algebraica)");
+            int numeroPY = int.Parse(Console.ReadLine());
+            Console.WriteLine("A que columna? Cagate en notacion algebraica");
+            int numeroM = int.Parse(Console.ReadLine());
+            Console.WriteLine("A que fila? Cagate en notacion algebraica");
+            int numeroMY = int.Parse(Console.ReadLine());
+            MoveParaCommand Comandino = new MoveParaCommand();
+            Comandino.Icono = board.pieces[numeroP, numeroPY].ToOut[0];
+            Comandino.PosX = numeroP;
+            Comandino.PosY = numeroPY;
+            try
+            {
+                Comandino.Iconocomido = board.pieces[numeroM, numeroMY].ToOut[0];
+            }
+            catch
+            {
+                Comandino.Iconocomido = '0';
+            }
+
+            Comandino.PosXC = numeroM;
+            Comandino.PosYC = numeroMY;
+            Dones.Push(Comandino);
         }
 
         //---------------------------------------------------------------------------------
-       static string MiraLoQueMeHacesHacerRicardo(string text,int Start)
+        static string MiraLoQueMeHacesHacerRicardo(string text,int Start)
         {
              int charLocation = text.IndexOf(",", Start, StringComparison.Ordinal);
             NextToComma = charLocation+1;
