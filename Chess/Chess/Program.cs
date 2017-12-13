@@ -52,12 +52,14 @@ namespace Chess
                 Console.WriteLine(LineaNegra);
                 do
                 {
+                if (LineaBlanca.Length>1)
                     blancas.Add(MiraLoQueMeHacesHacerRicardo(LineaBlanca, NextToComma));
                     Console.WriteLine(NextToComma);
                    
                 } while (NextToComma!=0);
                 do
                 {
+                if (LineaNegra.Length > 1)
                     negras.Add(MiraLoQueMeHacesHacerRicardo(LineaNegra, NextToComma));
                     Console.WriteLine(NextToComma);
 
@@ -203,7 +205,9 @@ namespace Chess
             }
             else
             {
+                
                 return text.Substring(Start, 3);
+               
             }
         }
    //-------------------------------------------------------------------------------
