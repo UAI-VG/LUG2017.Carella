@@ -8,22 +8,21 @@ namespace Chess
 {
     class MoveParaCommand
     {
-     public   char Icono;
-      public  int PosX;
-       public int PosY;
-       public char Iconocomido;
-       public int PosXC;
-       public int PosYC;
-        public void Hacer()
+        private Piece TheOneThatMoved;
+        private Piece TheOneThatGotMovedOn;
+        public MoveParaCommand(Piece Mover, Piece Movee,Board B)
         {
-            Program.board.pieces[PosX, PosY] = null;
-           // Program.board.pieces[PosXC,PosYC]=Program.
+            TheOneThatMoved = Mover;
+            TheOneThatGotMovedOn = Movee;
+           
         }
-        public void Deshacer()
+        public void Move(Board B)
         {
-
+            B.pieces[TheOneThatMoved.Position.Column, TheOneThatMoved.Position.Row]
+                = TheOneThatMoved;
+            B.pieces[TheOneThatGotMovedOn.Position.Column, TheOneThatGotMovedOn.Position.Row]
+                = TheOneThatGotMovedOn;
         }
-
     }
    
    

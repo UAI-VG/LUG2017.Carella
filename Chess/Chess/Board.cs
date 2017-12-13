@@ -40,6 +40,12 @@ namespace Chess
             piece.Position = position;
             piece.Board = this;
         }
+        public void MovePiece( Square position, Piece piece=null)
+        {
+            pieces[position.Column, position.Row] = piece;
+            piece.Position = position;
+            piece.Board = this;
+        }
 
         public bool IsInvalid(Square position)
         {

@@ -173,22 +173,22 @@ namespace Chess
             int numeroM = int.Parse(Console.ReadLine());
             Console.WriteLine("A que fila? Cagate en notacion algebraica");
             int numeroMY = int.Parse(Console.ReadLine());
-            MoveParaCommand Comandino = new MoveParaCommand();
-            Comandino.Icono = board.pieces[numeroP, numeroPY].ToOut[0];
-            Comandino.PosX = numeroP;
-            Comandino.PosY = numeroPY;
+        //    MoveParaCommand Comandino = new MoveParaCommand();
+          //  Comandino.Icono = board.pieces[numeroP, numeroPY].ToOut[0];
+            //Comandino.PosX = numeroP;
+            //Comandino.PosY = numeroPY;
             try
             {
-                Comandino.Iconocomido = board.pieces[numeroM, numeroMY].ToOut[0];
+              //  Comandino.Iconocomido = board.pieces[numeroM, numeroMY].ToOut[0];
             }
             catch
             {
-                Comandino.Iconocomido = '0';
+                //Comandino.Iconocomido = '0';
             }
 
-            Comandino.PosXC = numeroM;
-            Comandino.PosYC = numeroMY;
-            Dones.Push(Comandino);
+        //    Comandino.PosXC = numeroM;
+          //  Comandino.PosYC = numeroMY;
+            //Dones.Push(Comandino);
         }
 
         //---------------------------------------------------------------------------------
