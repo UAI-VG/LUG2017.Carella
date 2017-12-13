@@ -153,6 +153,7 @@ namespace Chess
                         {
                             Console.WriteLine(piece.Position.Row + " " + piece.Position.Column);
                             Console.WriteLine(s.Row +" "+ s.Column);
+                            MoveParaCommand M = new MoveParaCommand(piece, board.pieces[s.Column, s.Row], board,s);
                         }
                         MoveNumber++;
                     }

@@ -40,9 +40,10 @@ namespace Chess
             piece.Position = position;
             piece.Board = this;
         }
-        public void MovePiece( Square position, Piece piece=null)
+        public void MovePiece( Square position, Piece piece)
         {
             pieces[position.Column, position.Row] = piece;
+            if (piece == null) return;
             piece.Position = position;
             piece.Board = this;
         }
