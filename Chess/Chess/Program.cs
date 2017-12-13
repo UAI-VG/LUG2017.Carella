@@ -17,9 +17,9 @@ namespace Chess
         public static string LineaNegra;
         public static int NextToComma=0;
         public static List<Piece> PiezasAmenazadas=new List<Piece>();
-        public static Stack<MoveParaCommand> Dones;
-        public static Stack<MoveParaCommand> Undones;
-
+        public static Stack<MoveParaCommand> Dones = new Stack<MoveParaCommand>();
+        public static Stack<MoveParaCommand> Undones = new Stack<MoveParaCommand>();
+       
         static string StringParaARchivoOut(List<Piece> Lista)
         {
             string paraRetornar="";
@@ -95,7 +95,7 @@ namespace Chess
                     Console.WriteLine();
                 }
                 RecibirInputParaMovimientos();
-                
+                RecibirInputParaUndo();
 
                 //------------------------------------------------------------------------
 
@@ -137,34 +137,80 @@ namespace Chess
 
 
         }
+
+        private static void RecibirInputParaUndo()
+        {
+            Console.WriteLine("undo- 1 Redo- 2");
+              switch (int.Parse(Console.ReadLine()))
+            {
+                case 1:
+                    {
+                        if (Dones.Count < 1)
+                        {
+                            Console.WriteLine("no hay movimientos que deshacer");
+                        }
+                        else
+                        {
+                            Dones.Peek().Undo(board, Undones);
+                            Dones.Pop();
+                        }
+                       
+                        break;
+                    }
+                case 2:
+                    {
+                        if (Undones.Count < 1)
+                        {
+                            Console.WriteLine("no flashees richo");
+                        }
+                        else
+                        {
+                            Undones.Peek().Redo(board, Dones);
+                            Undones.Pop();
+                        }
+                        break;
+                    }
+                default:
+                    {
+                        break;
+                    }
+            }
+              
+            
+        }
+
         private static void RecibirInputParaMovimientos()
         {
-            Console.WriteLine("que pieza? (manda numero)");
-            int Input1 = int.Parse(Console.ReadLine());
-            Console.WriteLine("que numero de movimiento (manda numero)");
-            int Input2 = int.Parse(Console.ReadLine());
-            int PieceNumber = 0;
-            foreach (Piece piece in board.Pieces)
+            Console.WriteLine("moves? 1 para si");
+                if (int.Parse(Console.ReadLine())==1)
             {
-              if (PieceNumber==Input1)
+                Undones.Clear();
+                Console.WriteLine("que pieza? (manda numero)");
+                int Input1 = int.Parse(Console.ReadLine());
+                Console.WriteLine("que numero de movimiento (manda numero)");
+                int Input2 = int.Parse(Console.ReadLine());
+                int PieceNumber = 0;
+                foreach (Piece piece in board.Pieces)
                 {
-                    int MoveNumber = 0;
-                    foreach (Square s in piece.Moves)
+                    if (PieceNumber == Input1)
                     {
-                       if (MoveNumber==Input2)
+                        int MoveNumber = 0;
+                        foreach (Square s in piece.Moves)
                         {
-                            Console.WriteLine(piece.Position.Row + " " + piece.Position.Column);
-                            Console.WriteLine(s.Row +" "+ s.Column);
-                            MoveParaCommand M = new MoveParaCommand(piece, board.pieces[s.Column, s.Row], board,s);
+                            if (MoveNumber == Input2)
+                            {
+                                Console.WriteLine(piece.Position.Row + " " + piece.Position.Column);
+                                Console.WriteLine(s.Row + " " + s.Column);
+                                MoveParaCommand M = new MoveParaCommand(piece, board.pieces[s.Column, s.Row], board, s);
+                                Dones.Push(M);
+                            }
+                            MoveNumber++;
                         }
-                        MoveNumber++;
+                        Console.WriteLine();
                     }
-                    Console.WriteLine();
+                    PieceNumber++;
                 }
-                PieceNumber++;
-               
             }
-
         }
         private static void IntentoViejoDeCommand()
         {
@@ -246,7 +292,7 @@ namespace Chess
             */
         }
 
-        static Piece GetPiece(char Tipo)
+      public  static Piece GetPiece(char Tipo)
         {
             //try
             {
@@ -286,7 +332,7 @@ namespace Chess
             }
             */
         }
-        static Piece GetBlackPiece (char Tipo)
+      public  static Piece GetBlackPiece (char Tipo)
         {
             switch (Tipo)
             {
