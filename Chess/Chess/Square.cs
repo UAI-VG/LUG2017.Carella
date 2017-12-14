@@ -30,7 +30,7 @@ namespace Chess
             Column = col;
             Row = row;
         }
-
+        public int Value = 0;
         public int Column { get; }
         public int Row { get; }
 

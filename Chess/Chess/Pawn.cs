@@ -8,6 +8,10 @@ namespace Chess
 {
     class Pawn : WhitePiece
     {
+        public override int Value()
+        {
+            return 1;
+        }
         public override string ToOut
         {
             get
@@ -62,6 +66,7 @@ namespace Chess
                     Square dest = new Square(col, row);
                     if (!Board.IsInvalid(dest) && Board.IsOccupied(dest))
                     {
+                        dest.Value = Program.board.pieces[col, row].Value();
                         moves.Add(dest);
                     }
                 }
@@ -73,6 +78,7 @@ namespace Chess
                     Square dest = new Square(col, row);
                     if (!Board.IsInvalid(dest) && Board.IsOccupied(dest))
                     {
+                        dest.Value = Program.board.pieces[col, row].Value();
                         moves.Add(dest);
                     }
                 }

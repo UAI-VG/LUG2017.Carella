@@ -8,6 +8,10 @@ namespace Chess
 {
     class Bking : BlackPiece
     {
+        public override int Value()
+        {
+            return 9999;
+        }
         public override string ToOut
         {
             get
@@ -58,7 +62,11 @@ namespace Chess
                             try
                             {
                                 if (Program.board.pieces[col, row].IsWhite)
+                                {
+                                    dest.Value = Program.board.pieces[col, row].Value();
                                     Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
+                                }
+                                   
                             }
                             catch
                             {
@@ -83,7 +91,10 @@ namespace Chess
                             try
                             {
                                 if (Program.board.pieces[col, row].IsWhite)
+                                {
+                                    dest.Value = Program.board.pieces[col, row].Value();
                                     Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
+                                }
                             }
                             catch
                             {
@@ -108,7 +119,10 @@ namespace Chess
                             try
                             {
                                 if (Program.board.pieces[col, row].IsWhite)
+                                {
+                                    dest.Value = Program.board.pieces[col, row].Value();
                                     Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
+                                }
                             }
                             catch
                             {
@@ -133,7 +147,10 @@ namespace Chess
                             try
                             {
                                 if (Program.board.pieces[col, row].IsWhite)
+                                {
+                                    dest.Value = Program.board.pieces[col, row].Value();
                                     Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
+                                }
                             }
                             catch
                             {
@@ -158,7 +175,10 @@ namespace Chess
                             try
                             {
                                 if (Program.board.pieces[col, row].IsWhite)
+                                {
+                                    dest.Value = Program.board.pieces[col, row].Value();
                                     Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
+                                }
                             }
                             catch
                             {
@@ -183,7 +203,10 @@ namespace Chess
                             try
                             {
                                 if (Program.board.pieces[col, row].IsWhite)
+                                {
+                                    dest.Value = Program.board.pieces[col, row].Value();
                                     Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
+                                }
                             }
                             catch
                             {
@@ -208,7 +231,10 @@ namespace Chess
                             try
                             {
                                 if (Program.board.pieces[col, row].IsWhite)
+                                {
+                                    dest.Value = Program.board.pieces[col, row].Value();
                                     Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
+                                }
                             }
                             catch
                             {
@@ -234,7 +260,10 @@ namespace Chess
                             try
                             {
                                 if (Program.board.pieces[col, row].IsWhite)
+                                {
+                                    dest.Value = Program.board.pieces[col, row].Value();
                                     Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
+                                }
                             }
                             catch
                             {

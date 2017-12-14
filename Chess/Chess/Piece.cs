@@ -8,6 +8,8 @@ namespace Chess
 {
     abstract class Piece : object
     {
+        public abstract int Value();
+        
         //me cague en el encapsulamiento por que sino no podia hardcodear el false por default
         //osea, se que esta mal pero me acostumbre a tener false por default el año pasado en c++
         //y nada, paja hacerlo bien.

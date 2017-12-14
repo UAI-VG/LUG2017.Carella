@@ -38,6 +38,7 @@ namespace Chess
                             if (!Program.board.pieces[col, row].IsWhite) break;
                             else
                             {
+                                dest.Value = Program.board.pieces[col, row].Value();
                                 Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
                                 moves.Add(dest);
                                 break;
@@ -62,6 +63,7 @@ namespace Chess
                             if (!Program.board.pieces[col, row].IsWhite) break;
                             else
                             {
+                                dest.Value = Program.board.pieces[col, row].Value();
                                 Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
                                 moves.Add(dest);
                                 break;
@@ -86,6 +88,7 @@ namespace Chess
                             if (!Program.board.pieces[col, row].IsWhite) break;
                             else
                             {
+                                dest.Value = Program.board.pieces[col, row].Value();
                                 Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
                                 moves.Add(dest);
                                 break;
@@ -110,6 +113,7 @@ namespace Chess
                             if (!Program.board.pieces[col, row].IsWhite) break;
                             else
                             {
+                                dest.Value = Program.board.pieces[col, row].Value();
                                 Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
                                 moves.Add(dest);
                                 break;
@@ -133,6 +137,7 @@ namespace Chess
                             if (!Program.board.pieces[col, row].IsWhite) break;
                             else
                             {
+                                dest.Value = Program.board.pieces[col, row].Value();
                                 Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
                                 moves.Add(dest);
                                 break;
@@ -156,6 +161,7 @@ namespace Chess
                             if (!Program.board.pieces[col, row].IsWhite) break;
                             else
                             {
+                                dest.Value = Program.board.pieces[col, row].Value();
                                 Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
                                 moves.Add(dest);
                                 break;
@@ -179,6 +185,7 @@ namespace Chess
                             if (!Program.board.pieces[col, row].IsWhite) break;
                             else
                             {
+                                dest.Value = Program.board.pieces[col, row].Value();
                                 Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
                                 moves.Add(dest);
                                 break;
@@ -202,6 +209,7 @@ namespace Chess
                             if (!Program.board.pieces[col, row].IsWhite) break;
                             else
                             {
+                                dest.Value = Program.board.pieces[col, row].Value();
                                 Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
                                 moves.Add(dest);
                                 break;
@@ -213,6 +221,11 @@ namespace Chess
 
                 return moves;
             }
+        }
+
+        public override int Value()
+        {
+            return 9;
         }
     }
 }

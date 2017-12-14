@@ -8,6 +8,10 @@ namespace Chess
 {
     class BTower : BlackPiece
     {
+        public override int Value()
+        {
+            return 5;
+        }
         public override string ToOut
         {
             get
@@ -37,6 +41,7 @@ namespace Chess
                             if (!Program.board.pieces[col, row].IsWhite) break;
                             else
                             {
+                                dest.Value = Program.board.pieces[col, row].Value();
                                 Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
                                 moves.Add(dest);
                                 break;
@@ -60,6 +65,7 @@ namespace Chess
                             if (!Program.board.pieces[col, row].IsWhite) break;
                             else
                             {
+                                dest.Value = Program.board.pieces[col, row].Value();
                                 Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
                                 moves.Add(dest);
                                 break;
@@ -83,6 +89,7 @@ namespace Chess
                             if (!Program.board.pieces[col, row].IsWhite) break;
                             else
                             {
+                                dest.Value = Program.board.pieces[col, row].Value();
                                 Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
                                 moves.Add(dest);
                                 break;
@@ -106,6 +113,7 @@ namespace Chess
                             if (!Program.board.pieces[col, row].IsWhite) break;
                             else
                             {
+                                dest.Value = Program.board.pieces[col, row].Value();
                                 Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
                                 moves.Add(dest);
                                 break;

@@ -8,6 +8,10 @@ namespace Chess
 {
     class Bishop : WhitePiece
     {
+        public override int Value()
+        {
+            return 3;
+        }
         public override string ToOut
         {
             get
@@ -39,6 +43,7 @@ namespace Chess
                             else
                             {
                                 Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
+                                dest.Value = Program.board.pieces[col, row].Value();
                                 moves.Add(dest);
                                 break;
                             }
@@ -64,6 +69,7 @@ namespace Chess
                             else
                             {
                                 Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
+                                dest.Value = Program.board.pieces[col, row].Value();
                                 moves.Add(dest);
                                 break;
                             }
@@ -89,6 +95,7 @@ namespace Chess
                             else
                             {
                                 Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
+                                dest.Value = Program.board.pieces[col, row].Value();
                                 moves.Add(dest);
                                 break;
                             }
@@ -115,6 +122,7 @@ namespace Chess
                             else
                             {
                                 Program.PiezasAmenazadas.Add(Program.board.pieces[col, row]);
+                                dest.Value = Program.board.pieces[col, row].Value();
                                 moves.Add(dest);
                                 break;
                             }
