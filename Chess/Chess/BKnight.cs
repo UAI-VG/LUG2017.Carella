@@ -246,6 +246,8 @@ namespace Chess
                     }
 
                 }
+                moves.Sort();
+                moves.Reverse();
                 return moves;
             }
         }

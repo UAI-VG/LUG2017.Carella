@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Chess
 {
-    class Square
+    class Square : IComparable<Square>
     {
         
         public static Square FromString(string input)
@@ -41,6 +41,11 @@ namespace Chess
             return string.Format("{0}{1}", 
                 columns[Column], 
                 rows[Row]);
+        }
+
+        public int CompareTo(Square other)
+        {
+            return Value.CompareTo(other.Value);
         }
     }
 }

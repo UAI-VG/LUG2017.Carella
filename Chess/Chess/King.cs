@@ -288,8 +288,9 @@ namespace Chess
                         }
                     }
                 }
-                    
-                    return Auxiliarmoves ;
+                Auxiliarmoves.Sort();
+                Auxiliarmoves.Reverse();
+                return Auxiliarmoves ;
                 }
             }
         }

@@ -122,7 +122,8 @@ namespace Chess
                         moves.Add(dest);
                     }
                 }
-
+                moves.Sort();
+                moves.Reverse();
                 return moves;
             }
         }
