@@ -54,6 +54,28 @@ namespace Chess
 
                 }
                 //Take enemy piece
+                {
+                    int col = Position.Column;
+                    int row = Position.Row;
+                    col -= 1;
+                    row -= 1;
+                    Square dest = new Square(col, row);
+                    if (!Board.IsInvalid(dest) && Board.IsOccupied(dest))
+                    {
+                        moves.Add(dest);
+                    }
+                }
+                {
+                    int col = Position.Column;
+                    int row = Position.Row;
+                    col += 1;
+                    row -= 1;
+                    Square dest = new Square(col, row);
+                    if (!Board.IsInvalid(dest) && Board.IsOccupied(dest))
+                    {
+                        moves.Add(dest);
+                    }
+                }
                 return moves;
             }
         }
