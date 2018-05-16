@@ -1,0 +1,9 @@
+C:\Users\User\Desktop\codigo a mano\Richard\WolvesAndRabbitsSimulation\WolvesAndRabbitsSimulation\bin\Debug\WolvesAndRabbitsSimulation.exe.config
+C:\Users\User\Desktop\codigo a mano\Richard\WolvesAndRabbitsSimulation\WolvesAndRabbitsSimulation\bin\Debug\WolvesAndRabbitsSimulation.exe
+C:\Users\User\Desktop\codigo a mano\Richard\WolvesAndRabbitsSimulation\WolvesAndRabbitsSimulation\bin\Debug\WolvesAndRabbitsSimulation.pdb
+C:\Users\User\Desktop\codigo a mano\Richard\WolvesAndRabbitsSimulation\WolvesAndRabbitsSimulation\obj\Debug\WolvesAndRabbitsSimulation.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\codigo a mano\Richard\WolvesAndRabbitsSimulation\WolvesAndRabbitsSimulation\obj\Debug\WolvesAndRabbitsSimulation.Form1.resources
+C:\Users\User\Desktop\codigo a mano\Richard\WolvesAndRabbitsSimulation\WolvesAndRabbitsSimulation\obj\Debug\WolvesAndRabbitsSimulation.Properties.Resources.resources
+C:\Users\User\Desktop\codigo a mano\Richard\WolvesAndRabbitsSimulation\WolvesAndRabbitsSimulation\obj\Debug\WolvesAndRabbitsSimulation.csproj.GenerateResource.Cache
+C:\Users\User\Desktop\codigo a mano\Richard\WolvesAndRabbitsSimulation\WolvesAndRabbitsSimulation\obj\Debug\WolvesAndRabbitsSimulation.exe
+C:\Users\User\Desktop\codigo a mano\Richard\WolvesAndRabbitsSimulation\WolvesAndRabbitsSimulation\obj\Debug\WolvesAndRabbitsSimulation.pdb
